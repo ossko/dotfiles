@@ -1,0 +1,6 @@
+[editor]
+bufferline = "always"
+
+[keys.normal]
+F1 = ":yank-join ''"
+F2 = ":w"
