@@ -27,10 +27,8 @@ ln -sf "$DOTFILES/helix/languages.toml" "$HOME/.config/helix/languages.toml"
 grep -q 'dotfiles bootstrap' "$HOME/.bashrc" 2>/dev/null || cat >> "$HOME/.bashrc" <<EOF
 
 # dotfiles bootstrap
-export PATH="\$HOME/.local/bin:\$PATH"
-export HELIX_RUNTIME="\$HOME/.local/opt/helix/runtime"
-export EDITOR=hx
-. "$DOTFILES/.bashrc.local"
+. "$DOTFILES/.bashrc.common"
+[ -f "$DOTFILES/.bashrc.local" ] && . "$DOTFILES/.bashrc.local"
 EOF
 
 echo "dotfiles installed"
